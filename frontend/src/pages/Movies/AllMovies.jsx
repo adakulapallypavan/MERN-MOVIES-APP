@@ -118,11 +118,11 @@ const AllMovies = () => {
                   onChange={(e) => handleYearChange(e.target.value)}
                 >
                   <option value="">Year</option>
-                  {uniqueYears.map((year) => (
-                    <option key={year} value={year}>
-                      {year}
-                    </option>
-                  ))}
+{uniqueYears.sort((a, b) => a - b).map((year) => (
+  <option key={year} value={year}>
+    {year}
+  </option>
+))}
                 </select>
 
                 <select
@@ -139,7 +139,8 @@ const AllMovies = () => {
             </section>
           </div>
 
-          <section className="mt-[10rem] w-screen flex justify-center items-center flex-wrap">
+          <section className="mt-[10rem] w-screen flex justify-center items-center flex-wrap gap-4"
+          >
             {filteredMovies?.map((movie) => (
               <MovieCard key={movie._id} movie={movie} />
             ))}

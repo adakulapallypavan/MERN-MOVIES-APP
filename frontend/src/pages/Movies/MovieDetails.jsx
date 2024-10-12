@@ -36,62 +36,62 @@ const MovieDetails = () => {
   };
 
   return (
-    <>
-      <div>
-        <Link
-          to="/"
-          className="  text-white font-semibold hover:underline ml-[20rem]"
-        >
-          Go Back
-        </Link>
-      </div>
+    
+      <div className="p-4">
+  <Link
+    to="/"
+    className="text-white font-semibold hover:underline"
+  >
+    Go Back
+  </Link>
 
-      <div className="mt-[2rem]">
-        <div className="flex justify-center items-center">
-          <img
-            src={movie?.image}
-            alt={movie?.name}
-            className="w-[70%] rounded"
-          />
-        </div>
-        {/* Container One */}
-        <div className="container  flex justify-between ml-[20rem] mt-[3rem]">
-          <section>
-            <h2 className="text-5xl my-4 font-extrabold">{movie?.name}</h2>
-            <p className="my-4 xl:w-[35rem] lg:w-[35rem] md:w-[30rem] text-[#B0B0B0]">
-              {movie?.detail}
-            </p>
-          </section>
+  <div className="mt-8">
+    <div className="flex justify-center items-center">
+      <img
+        src={movie?.image}
+        alt={movie?.name}
+        className="w-[300px] h-[400px] rounded"
+      />
+    </div>
 
-          <div className="mr-[5rem]">
-            <p className="text-2xl font-semibold">
-              Releasing Date: {movie?.year}
-            </p>
+    {/* Container One */}
+    <div className="flex flex-col lg:flex-row lg:justify-between mt-8 space-y-8 lg:space-y-0">
+      <section className="lg:flex-1">
+        <h2 className="text-3xl lg:text-5xl font-extrabold">{movie?.name}</h2>
+        <p className="mt-4 text-gray-400 text-sm lg:text-base">
+          {movie?.detail}
+        </p>
+      </section>
 
-            <div>
-              {movie?.cast.map((c) => (
-                <ul key={c._id}>
-                  <li className="mt-[1rem]">{c}</li>
-                </ul>
-              ))}
-            </div>
-          </div>
-        </div>
+      <div className="lg:w-1/3 lg:ml-8">
+        <p className="text-xl font-semibold">
+          Releasing Date: {movie?.year}
+        </p>
 
-        <div className="container ml-[20rem]">
-          <MovieTabs
-            loadingMovieReview={loadingMovieReview}
-            userInfo={userInfo}
-            submitHandler={submitHandler}
-            rating={rating}
-            setRating={setRating}
-            comment={comment}
-            setComment={setComment}
-            movie={movie}
-          />
+        <div className="mt-4">
+          {movie?.cast.map((c) => (
+            <ul key={c._id} className="list-disc pl-4">
+              <li className="mt-2">{c}</li>
+            </ul>
+          ))}
         </div>
       </div>
-    </>
+    </div>
+
+    <div className="mt-8">
+      <MovieTabs
+        loadingMovieReview={loadingMovieReview}
+        userInfo={userInfo}
+        submitHandler={submitHandler}
+        rating={rating}
+        setRating={setRating}
+        comment={comment}
+        setComment={setComment}
+        movie={movie}
+      />
+    </div>
+  </div>
+</div>
   );
 };
 

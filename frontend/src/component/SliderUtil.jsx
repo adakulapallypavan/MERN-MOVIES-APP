@@ -8,9 +8,11 @@ const SliderUtil = ({ data }) => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 2,
+    slidesToShow: 5, 
+    slidesToScroll: 5, 
+    centerMode: false, 
   };
+  
 
   return (
     <Slider {...settings}>

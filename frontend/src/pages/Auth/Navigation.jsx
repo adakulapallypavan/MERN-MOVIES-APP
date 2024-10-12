@@ -35,9 +35,9 @@ const Navigation = () => {
   };
 
   return (
-    <div className="fixed bottom-10 left-[30rem] transform translate-x-1/2 translate-y-1/2 z-50 bg-[#0f0f0f] border w-[30%] px-[4rem] mb-[2rem] rounded">
-      <section className="flex justify-between items-center">
-        {/* Section 1 */}
+<div className="fixed bottom-10 left-[30rem] transform translate-x-1/2 translate-y-1/2 z-50 bg-[#0f0f0f] border w-[30%] px-[4rem] mb-[2rem] rounded">
+<section className="flex justify-between items-center">
+      
         <div className="flex justify-center items-center mb-[2rem]">
           <Link
             to="/"
@@ -55,7 +55,7 @@ const Navigation = () => {
             <span className="hidden nav-item-name mt-[3rem]">SHOP</span>
           </Link>
         </div>
-        {/* Section 2 */}
+       
         <div className="relative">
           <button
             onClick={toggleDropdown}

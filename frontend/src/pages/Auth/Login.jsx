@@ -29,15 +29,21 @@ const Login = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-
-    try {
-      const res = await login({ email, password }).unwrap();
-      dispatch(setCredentials({ ...res }));
-      navigate(redirect);
-    } catch (err) {
-      toast.error(err?.data?.message || err.error);
+  
+    if (password !== confirmPassword) {
+      toast.error("Passwords do not match");
+    } else {
+      try {
+        const res = await register({ username, email, password }).unwrap();
+        dispatch(setCredentials({ ...res }));
+        navigate('/movies'); // Directly navigate to /movies
+        toast.success("User successfully registered.");
+      } catch (err) {
+        toast.error(err?.data?.message || 'An error occurred. Please try again.');
+      }
     }
   };
+  
 
   return (
     <div>
@@ -102,11 +108,7 @@ const Login = () => {
           </div>
         </div>
 
-        <img
-          src="https://images.unsplash.com/photo-1485095329183-d0797cdc5676?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt=""
-          className="h-[65rem] w-[55%] xl:block md:hidden sm:hidden rounded-lg"
-        />
+        
       </section>
     </div>
   );

@@ -6,7 +6,7 @@ const Home = () => {
     <>
       <Header />
 
-      <section className="mt-[10rem]">
+      <section className="pt-20 w-full bg-black text-white overflow-x-hidden"> {/* Added pt-20 to adjust for fixed header */}
         <MoviesContainerPage />
       </section>
     </>
