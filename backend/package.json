@@ -5,10 +5,10 @@
   "type": "module",
   "main": "backend/index.js",
   "scripts": {
-    "start": "node backend/index.js",
     "fullstack": "concurrently \"npm run backend\" \"npm run frontend\"",
     "backend": "nodemon backend/index.js",
     "frontend": "cd frontend && npm run dev",
+    "start": "node backend/index.js", 
     "dev": "nodemon backend/index.js",
     "build": "npm install"
   },
@@ -28,6 +28,6 @@
     "nodemon": "^3.0.3"
   },
   "engines": {
-    "node": "16.x"
+    "node": "18.x"
   }
 }
