@@ -8,8 +8,7 @@
     "fullstack": "concurrently \"npm run backend\" \"npm run frontend\"",
     "backend": "nodemon backend/index.js",
     "frontend": "cd frontend && npm run dev",
-    "start": "node backend/index.js", 
-    "dev": "nodemon backend/index.js",
+    "start": "node backend/index.js",
     "build": "npm install"
   },
   "keywords": [],
